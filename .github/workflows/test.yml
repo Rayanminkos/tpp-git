@@ -1,0 +1,21 @@
+name: Test Workflow
+
+# Quand le workflow se déclenche
+on:
+  push:
+    branches:
+      - git-hks   # Remplace par ta branche si besoin
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Afficher un message
+        run: echo "GitHub Actions fonctionne !"
+
+      - name: Lister les fichiers
+        run: ls -la
